@@ -1,0 +1,40 @@
+{
+  "placeholderImages": [
+    {
+      "id": "accessory-top-hat",
+      "description": "A fancy black top hat for the virtual pet.",
+      "imageUrl": "https://picsum.photos/seed/101/200/200",
+      "imageHint": "top hat"
+    },
+    {
+      "id": "accessory-sunglasses",
+      "description": "Cool pixel-art style sunglasses.",
+      "imageUrl": "https://picsum.photos/seed/102/200/200",
+      "imageHint": "sunglasses"
+    },
+    {
+      "id": "accessory-bow-tie",
+      "description": "A dapper red bow tie.",
+      "imageUrl": "https://picsum.photos/seed/103/200/200",
+      "imageHint": "bow tie"
+    },
+    {
+      "id": "accessory-party-hat",
+      "description": "A festive party hat.",
+      "imageUrl": "https://picsum.photos/seed/104/200/200",
+      "imageHint": "party hat"
+    },
+    {
+      "id": "accessory-crown",
+      "description": "A royal golden crown.",
+      "imageUrl": "https://picsum.photos/seed/105/200/200",
+      "imageHint": "crown"
+    },
+    {
+      "id": "accessory-scarf",
+      "description": "A cozy knitted scarf.",
+      "imageUrl": "https://picsum.photos/seed/106/200/200",
+      "imageHint": "scarf"
+    }
+  ]
+}
