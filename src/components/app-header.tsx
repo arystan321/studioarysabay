@@ -11,7 +11,7 @@ export function AppHeader() {
   return (
     <header className="flex h-16 items-center justify-between border-b bg-card px-4 shadow-sm shrink-0 z-10">
       <Link href="/" className="text-2xl font-bold font-headline text-primary-foreground">
-        QuizPet
+        Analysis
       </Link>
       <div className="flex items-center gap-4">
         <div className="flex items-center gap-2 rounded-full bg-secondary px-3 py-1">

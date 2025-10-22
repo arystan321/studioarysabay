@@ -6,9 +6,9 @@ import { Home, PawPrint, ShoppingBag } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { href: "/", label: "Quiz", icon: Home },
-  { href: "/pet", label: "Pet", icon: PawPrint },
-  { href: "/shop", label: "Shop", icon: ShoppingBag },
+  { href: "/", label: "Analyzer", icon: Home },
+  { href: "/", label: "History", icon: Home },
+  { href: "/", label: "Credits", icon: ShoppingBag },
 ];
 
 export function BottomNav() {
