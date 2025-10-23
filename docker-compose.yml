@@ -10,7 +10,6 @@ services:
     volumes:
       - jenkins_home:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock  # доступ Jenkins к Docker хоста
-      - /usr/bin/docker:/usr/bin/docker            # сам бинарник Docker (из твоего ПК)
     environment:
       - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
     restart: unless-stopped
