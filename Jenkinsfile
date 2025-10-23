@@ -15,7 +15,7 @@ pipeline {
             agent {
                 docker {
                     image 'node:20' // Используем node:20 для совместимости
-                    args '-u root:root --volumes-from ${env.BUILD_ID}'
+                    args '-u root:root -v $WORKSPACE:/app'
                 }
             }
             steps {
@@ -27,7 +27,7 @@ pipeline {
             agent {
                 docker {
                     image 'node:20'
-                    args '-u root:root --volumes-from ${env.BUILD_ID}'
+                    args '-u root:root -v $WORKSPACE:/app'
                 }
             }
             steps {
