@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                echo "📥 Cloning repository..."
+                echo "Cloning repository..."
                 checkout scm
             }
         }
@@ -19,7 +19,7 @@ pipeline {
                 }
             }
             steps {
-                echo "📦 Installing dependencies..."
+                echo "Installing dependencies..."
                 sh 'npm ci'
             }
         }
@@ -31,19 +31,19 @@ pipeline {
                 }
             }
             steps {
-                echo "🧪 Running unit tests..."
-                sh 'npm test || echo "⚠️ No tests yet, skipping..."'
+                echo "Running unit tests..."
+                sh 'npm test || echo "No tests yet, skipping..."'
             }
         }
         stage('Build Docker image') {
             steps {
-                echo "🐳 Building Docker image..."
+                echo "Building Docker image..."
                 sh "docker build -t ${IMAGE_NAME}:${IMAGE_TAG} ."
             }
         }
         stage('Deploy locally') {
             steps {
-                echo "🚀 Deploying new container..."
+                echo "Deploying new container..."
                 sh '''
                     # Останавливаем предыдущий контейнер, если есть
                     docker ps -q --filter "name=my-next-app" | grep -q . && docker stop my-next-app && docker rm my-next-app || true
@@ -55,7 +55,7 @@ pipeline {
         stage('Push to Docker Hub (optional)') {
             when { expression { return env.DOCKER_PUSH == 'true' } }
             steps {
-                echo "☁️ Pushing image to Docker Hub..."
+                echo "Pushing image to Docker Hub..."
                 withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', usernameVariable: 'DH_USER', passwordVariable: 'DH_PASS')]) {
                     sh '''
                         echo "$DH_PASS" | docker login -u "$DH_USER" --password-stdin
@@ -67,12 +67,12 @@ pipeline {
     }
     post {
         success {
-            echo "✅ Pipeline succeeded — image: ${IMAGE_NAME}:${IMAGE_TAG}"
-            echo "🧹 Cleaning up unused Docker images..."
+            echo "Pipeline succeeded — image: ${IMAGE_NAME}:${IMAGE_TAG}"
+            echo "Cleaning up unused Docker images..."
             sh 'docker image prune -f'
         }
         failure {
-            echo "❌ Pipeline failed"
+            echo "Pipeline failed"
         }
     }
 }
